@@ -1,12 +1,12 @@
 :root {
-  --dark: #000;
-  --course: #F4E408;
+  --dark: rgba(43, 42, 42, 1);
+  --course: rgba(255, 166, 0, 1);
   --light: #fff;
 }
+
 body {
   background-color: var(--dark);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-  color: var(--light);
+  color: var(--course);
   font-family: monospace;
   font-size: 1.5em;
   line-height: 1.5;
@@ -15,25 +15,67 @@ body {
 main {
   max-width: 800px;
   margin: 10vh auto;
-}
+} 
 header {
-  background: var(--course);
   color: var(--dark);
   height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+/* main > div > label {
+  padding: 1em;
+  background-color: rgba(255, 166, 0, 1);
+  color: rgba(43, 42, 42, 1);
+  border-radius: 10px;
+}
+
+main > div > input {
+  position: absolute;
+  left: -100vw;
+} */
+
+header #sunnyWeather:target {
+  animation: sunnyWeather 1s !important;
+  animation-fill-mode: forwards !important;
+}
+section #rainyWeather:target {
+  animation: rainyWeather 1s !important;
+  animation-fill-mode: forwards !important;
+}
+section #thunderWeather:target {
+  animation: thunderWeather 1s !important;
+  animation-fill-mode: forwards !important;
+}
+body #snowyColoured:target {
+  animation: snowyWeather 1s !important;
+  animation-fill-mode: forwards !important;
+}
+
+/* #sunnyButton:checked ~ header {
+  animation: sunnyWeather 1s;
+  animation-fill-mode: forwards;
+}
+
+#rainyButton:checked ~ header {
+  animation: rainyWeather 1s;
+  animation-fill-mode: forwards;
+} */
+
 h1 {
   font-size: 5em;
 }
+/* h1:hover {
+  animation: shakingText 1s infinite;
+} */
+
 h2 {
   font-size: 2em;
   margin-top: 1.5em;
 }
 ul {
   display: flex;
-  /flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
@@ -41,7 +83,8 @@ ul {
 }
 ul li {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   margin: 1rem;
 }
@@ -69,11 +112,84 @@ section#lecturers img {
   max-width: 25vh;
 }
 
-a,
-a:visited {
+a {
   color: var(--course);
+}
+
+
+/* a, a:visited {
+  color: transparent;
+  font-size: 1.75em;
+  text-shadow: 0 0 2px rgba(255,165,0,0.5);
+  text-align: center;
+} */
+
+a:hover {
+  animation: growingWords 2000s infinite;
 }
 
 footer {
   font-style: italic;
+}
+
+@keyframes shakingText {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform : scale(1) rotate(-10deg);
+    color : transparent;
+    text-shadow: 0 0 5px rgba(33,33,33,0.5);
+  }
+  33% {
+    transform : scale(1.5em) rotate(-10deg);
+    color : black;
+    text-shadow: none;
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  66% {
+    transform: scale(1) rotate(10deg);
+    color: transparent;
+    text-shadow: 0 0 5px rgba(33,33,33,0.5);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    color: black;
+    text-shadow: none;
+  }
+}
+
+@keyframes sunnyWeather {
+  0% {
+    background-color: inherit;
+  }
+  100% {
+    background-color: rgba(255,165,0,1);
+  }
+}
+@keyframes rainyWeather {
+  0% {
+    background-color: inherit;
+  }
+  100% {
+    background-color: rgba(75, 119, 190, 1);
+  }
+}
+@keyframes thunderWeather {
+  0% {
+    background-color: inherit;
+  }
+  100% {
+    background-color: rgba(103, 65, 114, 1);
+  }
+}
+@keyframes snowyWeather {
+  0% {
+    background-color: inherit;
+  }
+  100% {
+    background-color: rgba(232, 236, 241, 1);
+  }
 }
