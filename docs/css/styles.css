@@ -17,6 +17,7 @@ main {
   margin: 10vh auto;
 } 
 header {
+  background-color: rgba(255, 166, 0, 1);
   color: var(--dark);
   height: 30vh;
   display: flex;
@@ -35,19 +36,19 @@ main > div > input {
   left: -100vw;
 } */
 
-header #sunnyWeather:target {
+body #sunnyColoured:target header{
   animation: sunnyWeather 1s !important;
   animation-fill-mode: forwards !important;
 }
-section #rainyWeather:target {
+body #rainyColoured:target header{
   animation: rainyWeather 1s !important;
   animation-fill-mode: forwards !important;
 }
-section #thunderWeather:target {
+body #thunderColoured:target header{
   animation: thunderWeather 1s !important;
   animation-fill-mode: forwards !important;
 }
-body #snowyColoured:target {
+body #snowyColoured:target header{
   animation: snowyWeather 1s !important;
   animation-fill-mode: forwards !important;
 }
@@ -116,49 +117,8 @@ a {
   color: var(--course);
 }
 
-
-/* a, a:visited {
-  color: transparent;
-  font-size: 1.75em;
-  text-shadow: 0 0 2px rgba(255,165,0,0.5);
-  text-align: center;
-} */
-
-a:hover {
-  animation: growingWords 2000s infinite;
-}
-
 footer {
   font-style: italic;
-}
-
-@keyframes shakingText {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform : scale(1) rotate(-10deg);
-    color : transparent;
-    text-shadow: 0 0 5px rgba(33,33,33,0.5);
-  }
-  33% {
-    transform : scale(1.5em) rotate(-10deg);
-    color : black;
-    text-shadow: none;
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  66% {
-    transform: scale(1) rotate(10deg);
-    color: transparent;
-    text-shadow: 0 0 5px rgba(33,33,33,0.5);
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-    color: black;
-    text-shadow: none;
-  }
 }
 
 @keyframes sunnyWeather {
