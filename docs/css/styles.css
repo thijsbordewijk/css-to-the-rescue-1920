@@ -1,6 +1,6 @@
 /* Import snowy font */
 
-@import url(//db.onlinewebfonts.com/c/6e6fcc2075f15659e5eb821462f9fd5b?family=Snowy);
+/* @import url(//db.onlinewebfonts.com/c/6e6fcc2075f15659e5eb821462f9fd5b?family=Snowy); */
 @font-face {font-family: "Snowy"; 
   src: url(/docs/@font-face/6e6fcc2075f15659e5eb821462f9fd5b.eot); 
   src: url("/docs/@font-face/6e6fcc2075f15659e5eb821462f9fd5b.eot") format("embedded-opentype"), 
