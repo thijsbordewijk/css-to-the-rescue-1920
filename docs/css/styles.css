@@ -33,19 +33,18 @@ header {
   align-items: center;
 }
 nav {
-  background-color: var(--dark);
   padding: 2em;
 }
 #sunnyText {
   margin-top: -4.8em;
   color: rgba(255, 166, 0, 1);
 }
-#student-work, #program {
+#description, #lecturers, #conduct {
   background-color: var(--dark);
   padding-top: 1em;
   padding-bottom: 2em;
 }
-#description, #lecturers, #conduct {
+#student-work, #program {
   color: var(--dark) !important;
 }
 h1 {
@@ -91,9 +90,10 @@ section#lecturers img {
   margin-right: 1em;
 }
 nav button {
-  background: var(--light);
-  color: var(--dark);
+  background: rgba(43, 42, 42, 1);
+  border-style: none;
   padding: 1em;
+  color: inherit;
 }
 img {
   max-width: 25vh;
@@ -230,9 +230,16 @@ transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
     box-shadow: none !important;
   }
 }
-
-
-
-@keyframes sunsDissapear {
-  
+label {
+  background-color: rgba(43, 42, 42, 1);
+  padding: 1em;
 }
+
+#sunToggle:checked ~ #flyingSuns {
+  display: none;
+}
+.sunButtonHidden {
+  position: absolute;
+  left: -100vw;
+}
+

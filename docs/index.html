@@ -22,7 +22,10 @@
 
   <!-- end header -->
 
- <section id="flyingSuns">
+  <label for="sunToggle">Toggle suns</label>
+  <input type="checkbox" id="sunToggle" class="sunButtonHidden">
+ 
+  <section id="flyingSuns">
   <div><img src="img/sun2.png"></div>
   <div><img src="img/sun3.png"></div>
   <div><img src="img/sun2.png"></div>
@@ -35,7 +38,7 @@
     <!-- Weather buttons, :target, couldnt get the checkbox hack to work-->    
     <main>
       <nav>
-        <button><a href="#sunnyColoured">Sunny</a></button>
+        <button class="removeSuns"><a href="#sunnyColoured">Sunny</a></button>
         <button><a href="#rainyColoured">Rainy</a></button>
         <button><a href="#thunderColoured">Thunder</a></button>
         <button><a href="#snowyColoured">Snowy</a></button>
