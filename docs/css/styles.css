@@ -230,3 +230,9 @@ transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
     box-shadow: none !important;
   }
 }
+
+
+
+@keyframes sunsDissapear {
+  
+}
