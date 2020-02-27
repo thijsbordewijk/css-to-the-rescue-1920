@@ -1,11 +1,14 @@
 /* Import snowy font */
 
 /* @import url(//db.onlinewebfonts.com/c/6e6fcc2075f15659e5eb821462f9fd5b?family=Snowy); */
-@font-face {font-family: "Snowy"; 
-  src: url(/docs/@font-face/6e6fcc2075f15659e5eb821462f9fd5b.eot); 
-  src: url("/docs/@font-face/6e6fcc2075f15659e5eb821462f9fd5b.eot") format("embedded-opentype"), 
-  url("/docs/@font-face/6e6fcc2075f15659e5eb821462f9fd5b.ttf") format("truetype"), 
- }
+@font-face {
+  font-family: "Snowy";
+  src: url(/docs/@font-face/6e6fcc2075f15659e5eb821462f9fd5b.eot);
+  src: url("/docs/@font-face/6e6fcc2075f15659e5eb821462f9fd5b.eot")
+      format("embedded-opentype"),
+    url("/docs/@font-face/6e6fcc2075f15659e5eb821462f9fd5b.ttf")
+      format("truetype");
+}
 
 /* basic styling  */
 
@@ -24,7 +27,7 @@ body {
 main {
   margin-top: 90px;
   text-align: center;
-} 
+}
 header {
   color: var(--dark);
   height: 30vh;
@@ -39,12 +42,15 @@ nav {
   margin-top: -4.8em;
   color: rgba(255, 166, 0, 1);
 }
-#description, #lecturers, #conduct {
+#description,
+#lecturers,
+#conduct {
   background-color: var(--dark);
   padding-top: 1em;
   padding-bottom: 2em;
 }
-#student-work, #program {
+#student-work,
+#program {
   color: var(--dark) !important;
 }
 h1 {
@@ -74,7 +80,10 @@ ul li {
 }
 a {
   color: inherit;
-  
+}
+button > a {
+  text-decoration: none;
+  font-family: inherit;
 }
 ul img {
   border: 2px solid var(--light);
@@ -121,7 +130,7 @@ body #snowyColoured:target {
   animation: snowyWeather 1s !important;
   animation-fill-mode: forwards !important;
   font-family: "Snowy" !important;
-}        
+}
 div > img {
   position: absolute;
   pointer-events: none;
@@ -151,36 +160,51 @@ div > img {
   animation: flyingAnimation1 70s linear infinite;
 }
 
+label {
+  background-color: rgba(43, 42, 42, 1);
+  padding: 1em;
+}
 
+#sunToggle:checked ~ #flyingSuns {
+  display: none;
+}
+.sunButtonHidden {
+  position: absolute;
+  left: -100vw;
+}
 
 /* deze code heb ik van: http://jsfiddle.net/Josh_Powell/8b8eN/2/show/ tot en met de streep in comments */
 
 @keyframes flyingAnimation1 {
-98.001%, 0% {
-display: block;
-transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
-}
-15% {
-transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
-}
-15.001%, 18% {
-transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
-}
-40% {
-transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
-}
-40.001%, 43% {
-transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
-}
-65% {
-transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
-}
-65.001%, 68% {
-transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
-}
-95% {
-transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
-}
+  98.001%,
+  0% {
+    display: block;
+    transform: translateX(-200%) translateY(100vh) rotateZ(0deg);
+  }
+  15% {
+    transform: translateX(100vw) translateY(-100%) rotateZ(180deg);
+  }
+  15.001%,
+  18% {
+    transform: translateX(100vw) translateY(-30%) rotateZ(0deg);
+  }
+  40% {
+    transform: translateX(-200%) translateY(3vh) rotateZ(-180deg);
+  }
+  40.001%,
+  43% {
+    transform: translateX(-200%) translateY(-100%) rotateZ(-180deg);
+  }
+  65% {
+    transform: translateX(100vw) translateY(50vh) rotateZ(0deg);
+  }
+  65.001%,
+  68% {
+    transform: translateX(20vw) translateY(-200%) rotateZ(180deg);
+  }
+  95% {
+    transform: translateX(10vw) translateY(100vh) rotateZ(0deg);
+  }
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -193,7 +217,7 @@ transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
     color: inherit;
   }
   100% {
-    background-color: rgba(255,165,0,1);
+    background-color: rgba(255, 165, 0, 1);
     color: rgba(255, 166, 0, 1);
   }
 }
@@ -230,16 +254,11 @@ transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
     box-shadow: none !important;
   }
 }
-label {
-  background-color: rgba(43, 42, 42, 1);
-  padding: 1em;
-}
 
-#sunToggle:checked ~ #flyingSuns {
-  display: none;
-}
-.sunButtonHidden {
-  position: absolute;
-  left: -100vw;
-}
+/* Media queries */
 
+@media (prefers-reduced-motion: reduce) {
+  #flyingSuns > div {
+    animation: none;
+  }
+}
